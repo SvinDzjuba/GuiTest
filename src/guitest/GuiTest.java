@@ -1,9 +1,11 @@
 package guitest;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -25,14 +27,20 @@ public class GuiTest extends JFrame{
         
         jLabelTitle = new JLabel("capybara ty", SwingConstants.CENTER);
         jLabelTitle.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jLabelTitle.setPreferredSize(new Dimension(480,27));
         jLabelTitle.setMaximumSize(new Dimension(480,54));
+        jLabelTitle.setPreferredSize(new Dimension(480,27));
+        jLabelTitle.setBorder(BorderFactory.createLineBorder(Color.black));
+        jLabelTitle.setAlignmentY(CENTER_ALIGNMENT);
+        
         
         JPanel panelTitle = new JPanel();
         panelTitle.setPreferredSize(new Dimension(480,54));
+        panelTitle.setBorder(BorderFactory.createLineBorder(Color.green));
+        panelTitle.setAlignmentY(CENTER_ALIGNMENT);
         panelTitle.add(jLabelTitle);
+        panelTitle.add(jLabelTitle,"push, align center");
                 
-        jTextField = new JTextField();
+        jTextField = new JTextField(SwingConstants.CENTER);
         jTextField.setPreferredSize(new Dimension(200, 27));
         jTextField.setMaximumSize(jTextField.getPreferredSize());
         JPanel panelTextField = new JPanel();
